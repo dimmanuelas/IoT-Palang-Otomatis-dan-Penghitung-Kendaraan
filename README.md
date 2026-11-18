@@ -1,8 +1,8 @@
-# 🚗 Sistem Palang Parkir Otomatis & Penghitung Kendaraan (IoT)
+# Sistem Palang Parkir Otomatis & Penghitung Kendaraan (IoT)
 
 Sistem otomatisasi palang pintu parkir berbasis mikrokontroler (Arduino) yang dilengkapi dengan fitur penghitung jumlah kendaraan secara *real-time*. Proyek ini memiliki dua jalur terpisah (pintu masuk dan pintu keluar) serta penyimpanan data non-volatil menggunakan **EEPROM** internal agar data jumlah kendaraan tidak hilang meskipun daya listrik terputus.
 
-> 🏆 **Informasi Kompetisi:** Proyek ini dikembangkan dan diikutsertakan untuk mewakili **SMKN 9 Surakarta** dalam ajang kompetisi **KRENOVA 2026 UNISRI** (Universitas Slamet Riyadi).
+> **Informasi Kompetisi:** Proyek ini dikembangkan dan diikutsertakan untuk mewakili **SMKN 9 Surakarta** dalam ajang kompetisi **KRENOVA 2026 UNISRI** (Universitas Slamet Riyadi).
 
 ## 📋 Daftar Isi
 
@@ -26,9 +26,9 @@ Sistem otomatisasi palang pintu parkir berbasis mikrokontroler (Arduino) yang di
 
 Proyek ini dirancang dan dibangun oleh **Tim "Satu Frekuensi"** dari **SMKN 9 Surakarta**:
 
-* **Dimmanuel Adhitya Sulistyo**
+* **Dimmanuel Adhitya Sulistyo (TJKT 1)**
 
-* **Ceva Aska Salsabil**
+* **Ceva Aska Salsabil (TJKT 1)**
 
 ## ✨ Fitur Utama
 
@@ -85,11 +85,12 @@ Untuk membangun proyek ini, komponen yang dibutuhkan adalah:
 ## 📂 Struktur Repositori
 
 ```
-├── sketch/
-│   └── palang_otomatis_eeprom.ino   # Source code utama program Arduino
-├── skema/
-│   └── skema_rangkaian.png          # Gambar skema jalur kabel (Fritzing/Wokwi)
-└── README.md                        # Dokumentasi proyek
+├── Code/
+│   └── SourceCode.ino   # Source code utama program Arduino
+├── Images/
+│   ├── skema_rangkaian.jpg          # Gambar skema jalur kabel
+│   └── skema_rangkaian_simple.jpg   # Gambar skema jalur kabel secara simpel
+└── README.md
 
 ```
 
@@ -102,9 +103,9 @@ Anda dapat melihat gambar diagram rangkaian lengkap pada folder `/skema`. Beriku
 | **LCD I2C 16x2** | VCC / GND | 5V / GND | 
 |  | SDA / SCL | A4 / A5 | 
 | **Ultrasonik Masuk** | TRIG / ECHO | Pin 2 / Pin 3 | 
-| **Ultrasonik Keluar** | TRIG / ECHO | Pin 4 / Pin 5 | 
-| **Servo Masuk** | Signal (Kuning/Oranye) | Pin 9 | 
-| **Servo Keluar** | Signal (Kuning/Oranye) | Pin 10 | 
+| **Ultrasonik Keluar** | TRIG / ECHO | Pin 5 / Pin 6 | 
+| **Servo Masuk** | Signal (Kuning/Oranye) | Pin 4 | 
+| **Servo Keluar** | Signal (Kuning/Oranye) | Pin 7 | 
 
 *(Catatan: Pastikan semua pin `GND` dari sensor, servo, catu daya eksternal, dan Arduino terhubung menjadi satu / Common Ground).*
 
@@ -113,12 +114,12 @@ Anda dapat melihat gambar diagram rangkaian lengkap pada folder `/skema`. Beriku
 1. **Clone Repositori**
 
    ```
-   git clone https://github.com/username-anda/nama-repositori.git
+   git clone https://github.com/dimmanuelas/IoT-Palang-Otomatis-dan-Penghitung-Kendaraan.git
    
    ```
 
 2. **Buka Source Code**
-   Buka file `.ino` yang ada di dalam folder `sketch/` menggunakan **Arduino IDE**.
+   Buka file `.ino` yang ada di dalam folder `Code/` menggunakan **Arduino IDE**.
 
 3. **Instal Library yang Dibutuhkan**
    Pastikan Anda sudah menginstal library berikut melalui *Library Manager* di Arduino IDE:
@@ -131,7 +132,7 @@ Anda dapat melihat gambar diagram rangkaian lengkap pada folder `/skema`. Beriku
 
 4. **Rakit Rangkaian & Upload**
 
-   * Hubungkan seluruh komponen sesuai dengan tabel wiring atau gambar pada folder `skema/`.
+   * Hubungkan seluruh komponen sesuai dengan tabel wiring atau gambar pada folder `Images/`.
 
    * Pilih **Board** dan **Port** yang sesuai di Arduino IDE, lalu klik **Upload**.
 
